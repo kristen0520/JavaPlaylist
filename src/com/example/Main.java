@@ -36,6 +36,7 @@ public class Main {
         Playlist playlist = new Playlist(albumsList);
 
         playlist.addSongToPlaylist("Vortech 1", 2.56, "Barbarossa", "Cubanate");
+        playlist.removeSong("Human Drum", "Cyberia", "Cubanate");
 
         System.out.println("Menu\n" +
                 "1 - quit\n"+

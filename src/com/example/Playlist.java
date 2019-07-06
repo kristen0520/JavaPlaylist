@@ -113,5 +113,23 @@ public class Playlist {
         }
     }
 
+    public void removeSong(String name, String albumTitle, String band){
+        for(int i =0; i<this.albums.size(); i++){
+            Album currentAlbum = this.albums.get(i);
+            ArrayList currentAlbumTracks = currentAlbum.getTracks();
+            String currentAlbumBand = currentAlbum.getBand();
+            String currentAlbumTitle = currentAlbum.getTitle();
+            for(int j=0; j<currentAlbumTracks.size(); j++){
+                Song currentSong = currentAlbum.getTracks().get(j);
+                String currentSongTitle = currentSong.getTitle();
+                if(currentSongTitle == name && currentAlbumTitle == albumTitle && currentAlbumBand == band) {
+                    currentAlbumTracks.remove(j);
+                    System.out.println("removed " + currentSongTitle + " from album " + currentAlbumTitle + " in playlist");
+                }
+            }
+        }
+        System.out.println("song not found");
+    }
+
 }
 
